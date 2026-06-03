@@ -2,9 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Maya Landscaping — Houston</title>
 <meta name="description" content="Maya Landscaping — Servicios de jardinería en Houston: limpieza, corte de pasto, diseño de áreas verdes, aspersores, tuberías y control de plagas.">
+<meta name="theme-color" content="#16301f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -38,21 +41,24 @@
     background:var(--cream);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:transparent;
   }
   h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:.01em;line-height:1.12}
   a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
+  img{max-width:100%;display:block;-webkit-user-select:none;user-select:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   .eyebrow{
     font-size:13px;letter-spacing:.22em;text-transform:uppercase;
     font-weight:700;color:var(--gold-deep);display:inline-block;
   }
   .btn{
-    display:inline-flex;align-items:center;gap:9px;
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
     font-family:var(--sans);font-weight:700;font-size:15px;
     padding:14px 24px;border-radius:999px;cursor:pointer;border:none;
     transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
     white-space:nowrap;
+    min-height:48px;
+    min-width:48px;
   }
   .btn:active{transform:translateY(1px)}
   .btn-gold{background:var(--gold);color:var(--green-900);box-shadow:var(--shadow-sm)}
@@ -65,15 +71,14 @@
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold-deep)}
   .btn svg{width:18px;height:18px;flex:none}
 
-  /* ---------- Header ---------- */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(246,242,232,.85);
+    background:rgba(246,242,232,.95);
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:13px;cursor:pointer}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
+  .brand{display:flex;align-items:center;gap:13px;cursor:pointer;flex:0 0 auto}
   .brand .mark{
     width:46px;height:46px;border-radius:12px;flex:none;
     background:linear-gradient(150deg,var(--green-700),var(--green-900));
@@ -81,8 +86,6 @@
     box-shadow:var(--shadow-sm);overflow:hidden;
   }
   .brand .mark svg{width:26px;height:26px}
-  .brand .mark{background:none;box-shadow:var(--shadow-sm)}
-  .brand .mark img{width:46px;height:46px;object-fit:cover;border-radius:12px}
   .brand-name{font-family:var(--serif);font-size:21px;line-height:1;color:var(--green-900)}
   .brand-sub{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-top:3px}
   .nav-links{display:flex;align-items:center;gap:30px}
@@ -96,10 +99,9 @@
     background:transparent;border:none;padding:7px 13px;cursor:pointer;color:var(--muted);font-family:var(--sans);font-weight:700;
   }
   .lang-toggle button.active{background:var(--green-700);color:#fff}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;min-height:48px;min-width:48px}
   .nav-toggle svg{width:28px;height:28px;color:var(--green-900)}
 
-  /* ---------- Hero ---------- */
   .hero{padding:64px 0 78px;position:relative;overflow:hidden}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
   .hero h1{font-size:clamp(40px,5.4vw,68px);color:var(--green-900);margin:18px 0 0}
@@ -133,13 +135,11 @@
   .hero-float b{font-family:var(--serif);font-size:20px;color:var(--green-900);display:block;line-height:1}
   .hero-float span{font-size:12.5px;color:var(--muted)}
 
-  /* ---------- Section shells ---------- */
   section{scroll-margin-top:90px}
   .section-head{text-align:center;max-width:640px;margin:0 auto 50px}
   .section-head h2{font-size:clamp(30px,3.6vw,44px);color:var(--green-900);margin:12px 0 0}
   .section-head p{color:var(--muted);font-size:17px;margin-top:14px}
 
-  /* ---------- Services ---------- */
   .services{padding:86px 0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .svc{
@@ -162,7 +162,6 @@
   .more-link{display:inline-block;margin-top:14px;font-weight:700;color:var(--gold-light);font-size:15px}
   .more-link:hover{color:#fff}
 
-  /* ---------- AI preview ---------- */
   .aipreview{padding:90px 0;background:var(--green-800);color:#f3efe2;position:relative;overflow:hidden}
   .aipreview::before{content:"";position:absolute;inset:0;opacity:.6;background:radial-gradient(680px 420px at 15% 0,rgba(196,160,82,.16),transparent 60%)}
   .ai-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -186,7 +185,6 @@
     color:#f3efe2;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid rgba(196,160,82,.4);
   }
 
-  /* ---------- Gallery (carousel) ---------- */
   .gallery{padding:86px 0}
   .carousel{position:relative;max-width:var(--maxw);margin:0 auto}
   .car-viewport{overflow:hidden;border-radius:18px}
@@ -198,6 +196,7 @@
     width:50px;height:50px;border-radius:50%;border:1px solid var(--line);cursor:pointer;
     background:var(--card);color:var(--green-800);display:grid;place-items:center;box-shadow:var(--shadow);
     transition:background .2s,color .2s,transform .15s;
+    min-height:48px;min-width:48px;
   }
   .car-btn:hover{background:var(--green-700);color:#fff;border-color:var(--green-700)}
   .car-btn:active{transform:translateY(-50%) scale(.94)}
@@ -205,11 +204,10 @@
   .car-prev{left:-22px}
   .car-next{right:-22px}
   .car-dots{display:flex;justify-content:center;gap:9px;margin-top:24px}
-  .car-dot{width:9px;height:9px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--line);transition:background .2s,width .2s}
+  .car-dot{width:9px;height:9px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--line);transition:background .2s,width .2s;min-height:40px;display:flex;align-items:center}
   .car-dot.active{background:var(--gold);width:26px;border-radius:999px}
   .gal-note{text-align:center;color:var(--muted);font-size:13.5px;margin-top:20px;font-style:italic}
 
-  /* ---------- Contact ---------- */
   .contact{padding:90px 0;background:var(--green-900);color:#f3efe2;position:relative;overflow:hidden}
   .contact::before{
     content:"";position:absolute;inset:0;opacity:.5;
@@ -233,7 +231,9 @@
     display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:14px;
     background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
     transition:background .2s,border-color .2s;
+    min-height:60px;
   }
+  .cm:active{background:rgba(255,255,255,.15)}
   .cm:hover{background:rgba(255,255,255,.09);border-color:var(--gold)}
   .cm .ico{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;flex:none;background:rgba(196,160,82,.16);color:var(--gold-light)}
   .cm .ico svg{width:22px;height:22px}
@@ -246,39 +246,30 @@
   .field{margin-bottom:16px}
   .field label{display:block;font-size:13px;font-weight:700;color:var(--green-800);margin-bottom:7px;letter-spacing:.02em}
   .field input,.field select,.field textarea{
-    width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);
-    padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--cream);
+    width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);
+    padding:14px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--cream);
     transition:border-color .15s,box-shadow .15s;
+    min-height:44px;
   }
   .field input:focus,.field select:focus,.field textarea:focus{
     outline:none;border-color:var(--green-600);box-shadow:0 0 0 3px rgba(58,115,80,.15);background:#fff;
   }
-  .field textarea{resize:vertical;min-height:84px}
+  .field textarea{resize:vertical;min-height:100px}
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .form-card .btn{width:100%;justify-content:center;margin-top:8px;font-size:16px;padding:15px}
+  .form-card .btn{width:100%;justify-content:center;margin-top:8px;font-size:16px;padding:15px;min-height:50px}
   .form-hint{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px}
   .form-hint svg{width:14px;height:14px;color:#1faa54}
 
-  /* ---------- Footer ---------- */
   footer{background:var(--green-900);color:#aebcae;padding:30px 0;border-top:1px solid rgba(255,255,255,.08)}
   .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13.5px}
   .foot a{color:#cdd8cd}.foot a:hover{color:var(--gold-light)}
   .foot-social{display:flex;gap:12px}
-  .foot-social a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.06);transition:background .2s}
+  .foot-social a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.06);transition:background .2s;min-height:48px;min-width:48px}
   .foot-social a:hover{background:var(--gold)}
   .foot-social svg{width:19px;height:19px;color:#f3efe2}
 
   [hidden]{display:none!important}
 
-  /* ---------- Placeholder images ---------- */
-  .placeholder-img{
-    background:linear-gradient(135deg, #e4ddca 0%, #efe9da 100%);
-    display:flex;align-items:center;justify-content:center;
-    color:#5c6a5f;font-size:14px;font-weight:500;
-    border-radius:18px;
-  }
-
-  /* ---------- Responsive ---------- */
   @media(max-width:920px){
     .hero-grid{grid-template-columns:1fr;gap:38px}
     .ai-grid{grid-template-columns:1fr;gap:38px}
@@ -287,33 +278,111 @@
     .hero-media img{height:340px}
     .contact-grid{grid-template-columns:1fr;gap:40px}
     .svc-grid{grid-template-columns:repeat(2,1fr)}
-    .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
     .car-slide{height:340px}
     .car-prev{left:6px}
     .car-next{right:6px}
   }
-  @media(max-width:640px){
+  @media(max-width:768px){
     .wrap{padding:0 20px}
-    .nav-links{display:none}
-    .nav-toggle{display:block}
-    .nav-links.open{
-      display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;
-      background:var(--cream);border-bottom:1px solid var(--line);padding:8px 0;
-    }
-    .nav-links.open a{padding:13px 28px;width:100%}
-    .hero{padding:42px 0 56px}
+    .hero{padding:48px 0 56px}
+    .services{padding:64px 0}
+    .aipreview{padding:64px 0}
+    .gallery{padding:64px 0}
+    .contact{padding:64px 0}
+    .section-head{margin-bottom:40px}
+    .hero h1{font-size:clamp(32px,6vw,52px)}
+    .hero p.lead{font-size:17px}
     .svc-grid{grid-template-columns:1fr}
-    .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
-    .car-slide{height:300px}
-    .field-row{grid-template-columns:1fr}
-    .form-card{padding:24px}
-    .hero-float{left:0}
+    .car-slide{height:280px}
+    .contact-grid{gap:30px}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 18px}
+    .nav{height:70px}
+    .nav-links{display:none}
+    .nav-toggle{display:flex}
+    .nav-links.open{
+      display:flex;position:fixed;top:70px;left:0;right:0;bottom:0;flex-direction:column;gap:0;
+      background:var(--cream);border-bottom:1px solid var(--line);padding:8px 0;z-index:40;overflow-y:auto;
+    }
+    .nav-links.open a{padding:16px 20px;width:100%;font-size:16px}
+    .hero{padding:36px 0 44px}
+    .hero h1{font-size:clamp(28px,7vw,42px);margin:14px 0 0}
+    .hero p.lead{font-size:15px;margin:18px 0 0}
+    .hero-cta{flex-direction:column;gap:12px;margin-top:24px}
+    .hero-cta .btn{width:100%;font-size:16px;padding:16px;min-height:50px}
+    .area-badge{font-size:12px;padding:7px 14px;margin-top:18px}
+    .trust-row{gap:8px;margin-top:12px}
+    .chip{font-size:12px;padding:5px 11px 5px 9px}
+    .hero-float{display:none}
+    .hero-media img{height:280px}
+    .section-head{margin-bottom:32px}
+    .section-head h2{font-size:clamp(24px,5.5vw,36px)}
+    .section-head p{font-size:15px;margin-top:10px}
+    .svc{padding:24px 20px}
+    .svc h3{font-size:18px}
+    .svc p{font-size:14px}
+    .svc-ico{width:48px;height:48px;margin-bottom:16px}
+    .svc-ico svg{width:24px;height:24px}
+    .aipreview h2{font-size:clamp(26px,5.5vw,40px)}
+    .ai-lead{font-size:15px;margin-top:14px}
+    .step{gap:12px}
+    .step-n{width:32px;height:32px;font-size:16px}
+    .step b{font-size:16px}
+    .step span{font-size:14px}
+    .contact h2{font-size:clamp(26px,5.5vw,40px)}
+    .contact-lead{font-size:15px;margin-top:12px}
+    .owner{gap:12px;margin-top:18px}
+    .owner-av{width:44px;height:44px;font-size:16px}
+    .owner b{font-size:16px}
+    .owner span{font-size:12px}
+    .contact-methods{gap:10px;margin-top:24px}
+    .cm{padding:14px 14px;gap:12px;min-height:54px}
+    .cm .ico{width:40px;height:40px;border-radius:9px}
+    .cm .ico svg{width:20px;height:20px}
+    .cm .lbl{font-size:11px}
+    .cm .val{font-size:15px}
+    .form-card{padding:24px;border-radius:18px}
+    .form-card h3{font-size:20px}
+    .form-card .sub{font-size:13px;margin:4px 0 18px}
+    .field{margin-bottom:14px}
+    .field label{font-size:12px;margin-bottom:6px}
+    .field input,.field select,.field textarea{font-size:16px;padding:12px 12px}
+    .field-row{gap:12px}
+    .form-card .btn{font-size:15px;padding:14px;min-height:48px}
+    .car-slide{height:240px}
+    .car-btn{width:44px;height:44px;min-height:44px;min-width:44px}
+    .car-btn svg{width:20px;height:20px}
+    .gal-note{font-size:12px;margin-top:16px}
+    .foot{font-size:12px;gap:12px;padding:20px 0}
+    .foot-social{gap:10px}
+    .foot-social a{width:36px;height:36px;min-height:44px;min-width:44px}
+    .foot-social svg{width:18px;height:18px}
+  }
+  @media(max-width:480px){
+    .wrap{padding:0 16px}
+    .brand-name{font-size:18px}
+    .brand-sub{font-size:9px}
+    .nav-right .btn{display:none}
+    .hero{padding:32px 0 40px}
+    .hero h1{font-size:clamp(24px,6.5vw,36px)}
+    .hero p.lead{font-size:14px}
+    .area-badge{font-size:11px}
+    .section-head h2{font-size:clamp(22px,5vw,32px)}
+    .svc-grid{gap:16px}
+    .svc{padding:18px 16px;border-radius:14px}
+    .svc h3{font-size:16px;margin-bottom:6px}
+    .svc p{font-size:13px}
+    .contact-methods{gap:8px;margin-top:18px}
+    .cm{padding:12px 12px;gap:10px}
+    .form-card{padding:18px;border-radius:16px}
+    .form-card h3{font-size:18px}
+    .car-slide{height:200px}
   }
 </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
@@ -347,7 +416,6 @@
   </div>
 </header>
 
-<!-- ===================== HERO ===================== -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
@@ -386,7 +454,6 @@
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
@@ -460,7 +527,6 @@
   </div>
 </section>
 
-<!-- ===================== AI PREVIEW ===================== -->
 <section class="aipreview" id="design">
   <div class="wrap ai-grid">
     <div class="ai-text">
@@ -499,7 +565,6 @@
   </div>
 </section>
 
-<!-- ===================== GALLERY ===================== -->
 <section class="gallery" id="gallery">
   <div class="wrap">
     <div class="section-head">
@@ -535,7 +600,6 @@
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-info">
@@ -558,10 +622,7 @@
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
           <span><span class="lbl" data-en="Call us" data-es="Llámanos">Llámanos</span><span class="val">(979) 388-8683</span></span>
         </a>
-        <a class="cm" href="/cdn-cgi/l/email-protection#4a272b332b642b243e252423257b0a232926253f2e64292527">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-          <span><span class="lbl">Email</span><span class="val"><span class="__cf_email__" data-cfemail="c2afa3bba3eca3acb6adacabadf382aba1aeadb7a6eca1adaf">[email&#160;protected]</span></span></span>
-        </a>
+
         <a class="cm" href="https://www.instagram.com/maya_landscaping_outdors_htx/" target="_blank" rel="noopener">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
           <span><span class="lbl">Instagram</span><span class="val">@maya_landscaping_outdors_htx</span></span>
@@ -569,7 +630,6 @@
       </div>
     </div>
 
-    <!-- Scheduling form -> WhatsApp -->
     <form class="form-card" id="bookForm" onsubmit="return sendBooking(event)">
       <h3 data-en="Request your visit" data-es="Agenda tu visita">Agenda tu visita</h3>
       <p class="sub" data-en="Fill this out and we'll open WhatsApp with your request ready to send." data-es="Llena los datos y abriremos WhatsApp con tu solicitud lista para enviar.">Llena los datos y abriremos WhatsApp con tu solicitud lista para enviar.</p>
@@ -623,7 +683,6 @@
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap foot">
     <div>© <span id="year"></span> Maya Landscaping · Houston, TX</div>
@@ -634,17 +693,14 @@
       <a id="footWa" href="#" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
       </a>
-      <a href="/cdn-cgi/l/email-protection#09646870682768677d666760663849606a65667c6d276a6664" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-      </a>
+
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const WA_NUMBER = '19793888683'; // +1 (979) 388-8683
+<script>
+  const WA_NUMBER = '19793888683';
 
-  /* ---------- Language ---------- */
   function applyLang(lang){
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-en]').forEach(el=>{
@@ -672,7 +728,6 @@
     applyLang(saved);
   })();
 
-  /* ---------- WhatsApp links ---------- */
   const waBase = 'https://wa.me/' + WA_NUMBER;
   const lang = () => document.documentElement.lang || 'es';
   const greet = () => lang()==='es'
@@ -688,7 +743,6 @@
   refreshWaLinks();
   document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click', refreshWaLinks));
 
-  /* ---------- Booking form -> WhatsApp ---------- */
   function sendBooking(e){
     e.preventDefault();
     const f = e.target;
@@ -711,11 +765,9 @@
     return false;
   }
 
-  /* ---------- Misc ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
   document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
 
-  /* ---------- Gallery carousel ---------- */
   (function(){
     const track = document.getElementById('carTrack');
     const slides = Array.from(track.children);
@@ -769,7 +821,6 @@
     let resizeT;
     window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(layout, 150); });
 
-    // touch / drag swipe
     let startX = null;
     track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
     track.addEventListener('touchend', e => {
