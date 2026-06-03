@@ -14,7 +14,6 @@
     --green-800:#1e4029;
     --green-700:#2c5a3b;
     --green-600:#3a7350;
-    --green-500:#4d8a63;
     --gold:#c4a052;
     --gold-deep:#a8853c;
     --gold-light:#e6cf8d;
@@ -32,30 +31,12 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:.01em;line-height:1.12}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(246,242,232,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
-  .brand{display:flex;align-items:center;gap:13px;cursor:pointer;flex-shrink:0}
-  .brand .mark{width:46px;height:46px;border-radius:12px;flex:none;background:linear-gradient(150deg,var(--green-700),var(--green-900));display:grid;place-items:center;color:var(--gold-light);box-shadow:var(--shadow-sm)}
-  .brand .mark svg{width:26px;height:26px}
-  .brand-name{font-family:var(--serif);font-size:21px;line-height:1;color:var(--green-900)}
-  .brand-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-top:3px}
-  .nav-links{display:flex;align-items:center;gap:30px;flex:1}
-  .nav-links a{font-size:15px;font-weight:600;color:var(--ink);opacity:.8;transition:opacity .15s,color .15s}
-  .nav-links a:hover{opacity:1;color:var(--gold-deep)}
-  .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
-  .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-weight:700;font-size:13px}
-  .lang-toggle button{background:transparent;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);font-family:var(--sans);font-weight:700;transition:background .15s,color .15s}
-  .lang-toggle button.active{background:var(--green-700);color:#fff}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--green-900);width:44px;height:44px;flex-shrink:0}
-  .nav-toggle svg{width:24px;height:24px}
-  
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:15px;padding:12px 20px;border-radius:999px;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:15px;padding:13px 22px;border-radius:999px;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap;text-align:center}
   .btn-gold{background:var(--gold);color:var(--green-900)}
   .btn-gold:hover{background:var(--gold-light)}
   .btn-green{background:var(--green-700);color:#fff}
@@ -64,139 +45,167 @@
   .btn-wa:hover{background:#199549}
   .btn svg{width:16px;height:16px;flex:none}
 
+  /* ===== Header (mobile-first) ===== */
+  header{position:sticky;top:0;z-index:60;background:rgba(246,242,232,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer;min-width:0}
+  .brand .mark{width:42px;height:42px;border-radius:11px;flex:none;background:linear-gradient(150deg,var(--green-700),var(--green-900));display:grid;place-items:center;color:var(--gold-light);box-shadow:var(--shadow-sm)}
+  .brand .mark svg{width:24px;height:24px}
+  .brand-name{font-family:var(--serif);font-size:20px;line-height:1.05;color:var(--green-900);white-space:nowrap}
+  .brand-sub{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-top:3px;white-space:nowrap}
+
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-size:15px;font-weight:600;color:var(--ink);opacity:.82;transition:opacity .15s,color .15s}
+  .nav-links a:hover{opacity:1;color:var(--gold-deep)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-weight:700;font-size:13px;flex:none}
+  .lang-toggle button{background:transparent;border:none;padding:7px 12px;cursor:pointer;color:var(--muted);font-family:var(--sans);font-weight:700;transition:background .15s,color .15s}
+  .lang-toggle button.active{background:var(--green-700);color:#fff}
+  .nav-toggle{display:none;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:11px;cursor:pointer;color:var(--green-900);width:44px;height:44px;flex:none}
+  .nav-toggle svg{width:24px;height:24px}
+
   /* Hero */
-  .hero{padding:64px 0 78px}
+  .hero{padding:60px 0 74px}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-  .hero h1{font-size:clamp(40px,5.4vw,68px);color:var(--green-900);margin:18px 0 0;word-wrap:break-word}
+  .hero h1{font-size:clamp(38px,5.2vw,64px);color:var(--green-900);margin:8px 0 0;overflow-wrap:break-word}
   .hero h1 em{font-style:italic;color:var(--gold-deep)}
   .hero p.lead{font-size:19px;color:var(--muted);margin:22px 0 0;max-width:30em}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-  .hero-media img{width:100%;height:480px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line);display:block}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .hero-media img{width:100%;height:440px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--green-800);padding:7px 14px 7px 12px;border-radius:999px;background:rgba(58,115,80,.08);border:1px solid var(--line)}
+  .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
 
   /* Services */
-  .services{padding:86px 0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .section-head{text-align:center;max-width:640px;margin:0 auto 50px}
-  .section-head h2{font-size:clamp(30px,3.6vw,44px);color:var(--green-900);margin:12px 0 0;word-wrap:break-word}
-  .section-head p{color:var(--muted);font-size:17px;margin-top:14px}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .svc{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 28px;transition:transform .2s ease,box-shadow .25s ease}
+  .services{padding:80px 0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .section-head h2{font-size:clamp(30px,3.6vw,44px);color:var(--green-900);margin:10px 0 0;overflow-wrap:break-word}
+  .section-head p{color:var(--muted);font-size:17px;margin-top:12px}
+  .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold-deep)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:28px 24px;transition:transform .2s ease,box-shadow .25s ease}
   .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold-light)}
-  .svc h3{font-size:22px;color:var(--green-900);margin-bottom:8px;word-wrap:break-word}
-  .svc p{font-size:15px;color:var(--muted);word-wrap:break-word}
-  .svc-ico{width:56px;height:56px;border-radius:14px;margin-bottom:20px;background:linear-gradient(150deg,var(--green-600),var(--green-800));display:grid;place-items:center;color:var(--gold-light);flex-shrink:0}
-  .svc-ico svg{width:28px;height:28px}
+  .svc h3{font-size:21px;color:var(--green-900);margin-bottom:7px;overflow-wrap:break-word}
+  .svc p{font-size:15px;color:var(--muted);overflow-wrap:break-word}
+  .svc-ico{width:54px;height:54px;border-radius:14px;margin-bottom:18px;background:linear-gradient(150deg,var(--green-600),var(--green-800));display:grid;place-items:center;color:var(--gold-light)}
+  .svc-ico svg{width:27px;height:27px}
   .svc-more{background:linear-gradient(155deg,var(--green-800),var(--green-900));border-color:var(--green-900)}
   .svc-more h3,.svc-more p{color:#f3efe2}
-  .more-link{display:inline-block;margin-top:14px;font-weight:700;color:var(--gold-light);font-size:15px}
+  .more-link{display:inline-block;margin-top:12px;font-weight:700;color:var(--gold-light);font-size:15px}
 
   /* Gallery carousel */
-  .gallery{padding:86px 0}
+  .gallery{padding:80px 0}
   .carousel{position:relative;max-width:var(--maxw);margin:0 auto}
   .car-viewport{overflow:hidden;border-radius:18px}
-  .car-track{display:flex;gap:18px;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-  .car-slide{flex:none;height:400px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
-  .car-slide img{width:100%;height:100%;object-fit:cover;display:block}
-  .car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:50px;height:50px;border-radius:50%;border:1px solid var(--line);cursor:pointer;background:var(--card);color:var(--green-800);display:grid;place-items:center;box-shadow:var(--shadow);transition:background .2s,color .2s}
+  .car-track{display:flex;gap:16px;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+  .car-slide{flex:none;height:400px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--cream-2)}
+  .car-slide img{width:100%;height:100%;object-fit:cover}
+  .car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);cursor:pointer;background:var(--card);color:var(--green-800);display:grid;place-items:center;box-shadow:var(--shadow);transition:background .2s,color .2s}
   .car-btn:hover{background:var(--green-700);color:#fff;border-color:var(--green-700)}
   .car-btn svg{width:22px;height:22px}
-  .car-prev{left:-22px}
-  .car-next{right:-22px}
-  .car-dots{display:flex;justify-content:center;gap:6px;margin-top:20px}
+  .car-prev{left:-20px}
+  .car-next{right:-20px}
+  .car-dots{display:flex;justify-content:center;gap:6px;margin-top:20px;flex-wrap:wrap}
   .car-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--line);transition:background .2s,width .2s}
   .car-dot.active{background:var(--gold);width:24px;border-radius:999px}
+  .gal-note{text-align:center;color:var(--muted);font-size:13.5px;margin-top:18px;font-style:italic}
 
   /* Contact */
-  .contact{padding:90px 0;background:var(--green-900);color:#f3efe2}
-  .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
-  .contact h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin:14px 0 0;word-wrap:break-word}
-  .form-card{background:var(--card);border-radius:22px;padding:34px;box-shadow:var(--shadow);color:var(--ink)}
-  .form-card h3{font-size:25px;color:var(--green-900);word-wrap:break-word}
-  .field{margin-bottom:16px}
-  .field label{display:block;font-size:13px;font-weight:700;color:var(--green-800);margin-bottom:7px}
-  .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--cream);transition:border-color .15s}
+  .contact{padding:84px 0;background:var(--green-900);color:#f3efe2}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+  .contact h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin:10px 0 0;overflow-wrap:break-word}
+  .contact .eyebrow{color:var(--gold-light)}
+  .contact-lead{color:#cdd8cd;font-size:17px;margin-top:14px;max-width:30em}
+  .owner{display:flex;align-items:center;gap:14px;margin-top:24px}
+  .owner-av{width:50px;height:50px;border-radius:50%;flex:none;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold-light),var(--gold));color:var(--green-900);font-family:var(--serif);font-size:18px}
+  .owner b{font-family:var(--serif);font-size:18px;color:#fff;display:block;line-height:1.1}
+  .owner span{font-size:13px;color:var(--gold-light);font-weight:600}
+  .contact-methods{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+  .cm{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:background .2s,border-color .2s;color:#f3efe2}
+  .cm:hover{background:rgba(255,255,255,.09);border-color:var(--gold)}
+  .cm .ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none;background:rgba(196,160,82,.16);color:var(--gold-light)}
+  .cm .ico svg{width:21px;height:21px}
+  .cm .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);font-weight:700;display:block}
+  .cm .val{font-size:15.5px;font-weight:600;color:#fff;margin-top:1px;display:block;word-break:break-word}
+
+  .form-card{background:var(--card);border-radius:22px;padding:32px;box-shadow:var(--shadow);color:var(--ink)}
+  .form-card h3{font-size:24px;color:var(--green-900);overflow-wrap:break-word}
+  .form-card .sub{font-size:14px;color:var(--muted);margin:6px 0 22px}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:13px;font-weight:700;color:var(--green-800);margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--cream);transition:border-color .15s}
   .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green-600);background:#fff}
-  .field textarea{resize:vertical;min-height:84px}
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .form-card .btn{width:100%;margin-top:8px}
+  .field textarea{resize:vertical;min-height:88px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .form-card .btn{width:100%;margin-top:8px;padding:15px}
 
-  footer{background:var(--green-900);color:#aebcae;padding:30px 0;border-top:1px solid rgba(255,255,255,.08)}
-  .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13px}
-  .foot-social{display:flex;gap:12px}
-  .foot-social a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.06);transition:background .2s}
+  /* Footer */
+  footer{background:var(--green-900);color:#aebcae;padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+  .foot-social{display:flex;gap:10px}
+  .foot-social a{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.06);transition:background .2s}
   .foot-social a:hover{background:var(--gold)}
-  .foot-social svg{width:18px;height:18px;color:#f3efe2}
+  .foot-social svg{width:19px;height:19px;color:#f3efe2}
 
-  /* Responsive */
+  /* ===== Responsive ===== */
   @media(max-width:920px){
-    .hero-grid{grid-template-columns:1fr;gap:38px}
-    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-media{order:-1}
+    .hero-media img{height:300px}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
     .svc-grid{grid-template-columns:repeat(2,1fr)}
     .car-slide{height:340px}
+    .car-prev{left:8px}
+    .car-next{right:8px}
   }
-  @media(max-width:768px){
-    .wrap{padding:0 20px}
-    .nav{height:70px}
-    .svc-grid{grid-template-columns:1fr}
-    .car-slide{height:280px}
+  @media(max-width:760px){
+    .wrap{padding:0 18px}
+    /* mobile header: brand + hamburger only */
+    .nav-links{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:6px 0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:15px 18px;font-size:16px;border-bottom:1px solid var(--line);opacity:1}
+    .nav-links a:last-child{border-bottom:none}
+    .nav-toggle{display:flex}
+    .lang-toggle{order:2}
+    .hero{padding:36px 0 48px}
+    .hero h1{font-size:clamp(30px,8vw,44px)}
+    .hero p.lead{font-size:16px;margin-top:16px}
+    .hero-cta{gap:12px;margin-top:26px}
+    .hero-cta .btn{flex:1;min-width:140px}
+    .services{padding:60px 0}
+    .gallery{padding:60px 0}
+    .contact{padding:60px 0}
+    .section-head{margin-bottom:36px}
+    .section-head h2{font-size:clamp(26px,6vw,38px)}
+    .svc-grid{grid-template-columns:1fr;gap:14px}
+    .svc{padding:22px 20px}
+    .car-slide{height:300px}
+    .car-btn{width:42px;height:42px}
+    .car-btn svg{width:19px;height:19px}
+    .form-card{padding:24px}
   }
-  @media(max-width:640px){
-    .wrap{padding:0 16px}
-    .nav{flex-wrap:wrap;height:auto;gap:8px;padding:8px 0}
-    .brand{order:1}
-    .nav-links{display:none;order:3;width:100%;flex-direction:column;gap:0;margin-top:8px}
-    .nav-links.open{display:flex!important}
-    .nav-links a{padding:12px 16px;border-bottom:1px solid var(--line);font-size:15px}
-    .nav-right{order:2;gap:8px;width:100%;justify-content:flex-end}
+  @media(max-width:430px){
+    .wrap{padding:0 14px}
+    .nav{height:62px;gap:8px}
+    .nav-links{top:62px}
+    .brand .mark{width:38px;height:38px}
+    .brand .mark svg{width:21px;height:21px}
+    .brand-name{font-size:17px}
+    .brand-sub{font-size:8.5px;letter-spacing:.14em}
     .lang-toggle{font-size:12px}
     .lang-toggle button{padding:6px 10px}
-    .nav-toggle{display:flex}
-    
-    .hero{padding:36px 0 44px}
-    .hero-grid{gap:28px}
-    .hero h1{font-size:clamp(28px,7vw,42px);margin-top:12px;overflow-wrap:break-word}
-    .hero p.lead{font-size:15px;margin-top:16px}
-    .hero-cta{flex-direction:column;gap:12px}
-    .hero-cta .btn{width:100%;padding:14px}
-    .hero-media img{height:280px}
-    
-    .section-head h2{font-size:clamp(24px,5.5vw,36px);overflow-wrap:break-word}
-    .svc{padding:20px 16px}
-    .svc h3{font-size:18px}
-    .svc p{font-size:14px}
-    .svc-ico{width:48px;height:48px}
-    .svc-ico svg{width:24px;height:24px}
-    
-    .contact h2{font-size:clamp(26px,5.5vw,40px);overflow-wrap:break-word}
-    .form-card{padding:24px}
-    .form-card h3{font-size:20px}
-    .field input,.field select,.field textarea{font-size:16px;padding:12px}
-    .field-row{gap:12px}
-    
-    .car-slide{height:240px}
-    .car-btn{width:40px;height:40px}
-    .car-btn svg{width:18px;height:18px}
-    .car-dots{gap:4px}
-    .car-dot{width:6px;height:6px}
-    .car-dot.active{width:18px}
-  }
-  @media(max-width:480px){
-    .wrap{padding:0 14px}
-    .brand-name{font-size:16px}
-    .brand-sub{font-size:8px}
-    .btn{font-size:14px;padding:11px 16px}
-    .btn svg{width:14px;height:14px}
-    
-    .hero h1{font-size:clamp(24px,6.5vw,36px)}
-    .hero p.lead{font-size:14px}
-    
-    .svc-grid{gap:14px}
-    .svc{padding:16px 14px}
-    .svc h3{font-size:16px;margin-bottom:4px}
-    
-    .form-card{padding:18px}
-    .form-card h3{font-size:18px}
-    .field{margin-bottom:12px}
-    .field label{font-size:12px}
+    .nav-toggle{width:42px;height:42px}
+    .hero h1{font-size:clamp(27px,8.5vw,38px)}
+    .hero p.lead{font-size:15px}
+    .hero-media img{height:240px;border-radius:18px}
+    .hero-cta{flex-direction:column}
+    .hero-cta .btn{width:100%;flex:none}
+    .chip{font-size:12px}
+    .svc h3{font-size:19px}
+    .form-card{padding:20px}
+    .form-card h3{font-size:21px}
+    .field-row{grid-template-columns:1fr;gap:0}
+    .car-slide{height:260px}
   }
 </style>
 </head>
@@ -218,7 +227,7 @@
     </div>
     <nav class="nav-links" id="navLinks">
       <a href="#services" data-en="Services" data-es="Servicios">Servicios</a>
-      <a href="#design" data-en="Gallery" data-es="Galería">Galería</a>
+      <a href="#gallery" data-en="Gallery" data-es="Galería">Galería</a>
       <a href="#contact" data-en="Contact" data-es="Contacto">Contacto</a>
     </nav>
     <div class="nav-right">
@@ -236,15 +245,21 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
+      <span class="eyebrow" data-en="Lawn &amp; Garden Care · Houston" data-es="Jardinería &amp; Áreas Verdes · Houston">Jardinería &amp; Áreas Verdes · Houston</span>
       <h1 data-en="Outdoor spaces that &lt;em&gt;feel alive&lt;/em&gt;." data-es="Espacios verdes que &lt;em&gt;cobran vida&lt;/em&gt;.">Espacios verdes que <em>cobran vida</em>.</h1>
-      <p class="lead" data-en="From weekly mowing to full landscape design, we keep your yard healthy, tidy, and beautiful." data-es="Desde el corte de pasto hasta el diseño completo de áreas verdes, mantenemos tu jardín sano, limpio y hermoso.">Desde el corte de pasto hasta el diseño completo de áreas verdes, mantenemos tu jardín sano, limpio y hermoso.</p>
+      <p class="lead" data-en="From weekly mowing to full landscape design, we keep your yard healthy, tidy, and beautiful across Houston." data-es="Desde el corte de pasto hasta el diseño completo de áreas verdes, mantenemos tu jardín sano, limpio y hermoso en todo Houston.">Desde el corte de pasto hasta el diseño completo de áreas verdes, mantenemos tu jardín sano, limpio y hermoso en todo Houston.</p>
       <div class="hero-cta">
         <a class="btn btn-wa" href="#" id="heroWa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.75.59.26 1.05.41 1.42.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> WhatsApp</a>
         <a class="btn btn-green" href="#contact" data-en="Request a visit" data-es="Solicitar visita">Solicitar visita</a>
       </div>
+      <div class="trust-row">
+        <span class="chip" data-en="Free estimates" data-es="Estimaciones gratis">Estimaciones gratis</span>
+        <span class="chip" data-en="Fully insured" data-es="Totalmente asegurado">Totalmente asegurado</span>
+        <span class="chip" data-en="Residential &amp; commercial" data-es="Residencial y comercial">Residencial y comercial</span>
+      </div>
     </div>
     <div class="hero-media">
-      <img src="images/hero.jpg" alt="Jardín">
+      <img src="images/hero.jpg" alt="Casa con jardín cuidado por Maya Landscaping">
     </div>
   </div>
 </section>
@@ -252,6 +267,7 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
+      <span class="eyebrow" data-en="What we do" data-es="Lo que hacemos">Lo que hacemos</span>
       <h2 data-en="Complete lawn &amp; garden care" data-es="Cuidado completo de tu jardín">Cuidado completo de tu jardín</h2>
       <p data-en="One trusted team for everything your outdoor space needs." data-es="Un solo equipo de confianza para todo lo que tu jardín necesita.">Un solo equipo de confianza para todo lo que tu jardín necesita.</p>
     </div>
@@ -259,114 +275,144 @@
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h7a4 4 0 0 0 4-4V7"/><circle cx="5" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M14 7h5l1 6h-6"/></svg></div>
         <h3 data-en="Lawn Care" data-es="Cuidado de césped">Cuidado de césped</h3>
-        <p data-en="Regular mowing, edging and upkeep." data-es="Corte, orillado y mantenimiento regular.">Corte, orillado y mantenimiento regular.</p>
+        <p data-en="Regular mowing, edging and upkeep for a clean, healthy lawn." data-es="Corte, orillado y mantenimiento regular para un césped limpio y sano.">Corte, orillado y mantenimiento regular para un césped limpio y sano.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V13"/><circle cx="12" cy="8" r="4"/><path d="M12 13c-3 0-5-2-5-2M12 13c3 0 5-2 5-2"/></svg></div>
         <h3 data-en="Flowers &amp; Plants" data-es="Flores y plantas">Flores y plantas</h3>
-        <p data-en="Planting and garden design." data-es="Plantación y diseño de áreas verdes.">Plantación y diseño de áreas verdes.</p>
+        <p data-en="Planting of flowers, shrubs and full flower-bed design." data-es="Plantación de flores, arbustos y diseño de jardineras.">Plantación de flores, arbustos y diseño de jardineras.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13h11l3-3h4v4a3 3 0 0 1-3 3H6"/><circle cx="7" cy="19" r="1.6"/><path d="M3 13l1.5-4H11l3 4"/></svg></div>
         <h3 data-en="Mulch" data-es="Mulch">Mulch</h3>
-        <p data-en="Fresh mulch in multiple colors." data-es="Mulch fresco en varios colores.">Mulch fresco en varios colores.</p>
+        <p data-en="Fresh mulch in black, hardwood or red." data-es="Mulch fresco en negro, madera o rojo.">Mulch fresco en negro, madera o rojo.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2.5 3 4.5 5.5 4.5 8.5a4.5 4.5 0 0 1-9 0C7.5 8.5 9.5 6 12 3Z"/><path d="M3 20c2-1 4-1 6 0M15 20c2-1 4-1 6 0"/></svg></div>
-        <h3 data-en="Irrigation" data-es="Riego">Riego</h3>
-        <p data-en="System repair and maintenance." data-es="Reparación y mantenimiento de sistemas.">Reparación y mantenimiento de sistemas.</p>
+        <h3 data-en="Irrigation Repair" data-es="Reparación de riego">Reparación de riego</h3>
+        <p data-en="Diagnosis, repair and tuning of sprinkler systems." data-es="Diagnóstico, reparación y ajuste de aspersores.">Diagnóstico, reparación y ajuste de aspersores.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22v-5"/><path d="M12 17a6 6 0 0 0 6-6 6 6 0 0 0-12 0 6 6 0 0 0 6 6Z"/><path d="M12 11l-2-2M12 11l2-2"/></svg></div>
         <h3 data-en="Tree Trimming" data-es="Poda de árboles">Poda de árboles</h3>
-        <p data-en="Pruning and shaping." data-es="Poda y formado de árboles.">Poda y formado de árboles.</p>
+        <p data-en="Safe pruning and shaping to keep trees healthy." data-es="Poda y formado seguro para mantener árboles sanos.">Poda y formado seguro para mantener árboles sanos.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16"/><path d="M7 16l-1 4M17 16l1 4"/><path d="M6 12h12l-1 4H7l-1-4Z"/><path d="M10 12V8M14 12V6"/></svg></div>
-        <h3 data-en="Pressure Wash" data-es="Lavado a presión">Lavado a presión</h3>
-        <p data-en="Driveways and patios cleaned." data-es="Limpieza de cocheras y patios.">Limpieza de cocheras y patios.</p>
+        <h3 data-en="Driveway Wash" data-es="Lavado de cocheras">Lavado de cocheras</h3>
+        <p data-en="Pressure washing of driveways, walkways and patios." data-es="Lavado a presión de cocheras, andadores y patios.">Lavado a presión de cocheras, andadores y patios.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M7 21V11l5-5 5 5v10"/><path d="M10 21v-5h4v5"/></svg></div>
-        <h3 data-en="Cleanup" data-es="Limpieza">Limpieza</h3>
-        <p data-en="Leaf and debris removal." data-es="Retiro de hojas y escombros.">Retiro de hojas y escombros.</p>
+        <h3 data-en="Cleaning Service" data-es="Servicio de limpieza">Servicio de limpieza</h3>
+        <p data-en="Leaf removal, debris hauling and seasonal cleanups." data-es="Retiro de hojas, escombros y limpieza de temporada.">Retiro de hojas, escombros y limpieza de temporada.</p>
       </article>
       <article class="svc">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 21c0-5 1.5-9 7-9s7 4 7 9"/><path d="M12 12V4M9 6l3-2 3 2"/><path d="M8 16h8"/></svg></div>
-        <h3 data-en="Bush Trimming" data-es="Poda de arbustos">Poda de arbustos</h3>
-        <p data-en="Bushes and hedge shaping." data-es="Formado de arbustos y setos.">Formado de arbustos y setos.</p>
+        <h3 data-en="Bushes Trimming" data-es="Poda de arbustos">Poda de arbustos</h3>
+        <p data-en="Trimming and shaping of bushes and hedges." data-es="Recorte y formado de arbustos y setos.">Recorte y formado de arbustos y setos.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V9l3-3 3 3v12M15 21V9l3-3 3 3v12"/><path d="M3 13h18M3 17h18"/></svg></div>
+        <h3 data-en="Fences" data-es="Cercas">Cercas</h3>
+        <p data-en="Installation and repair of wood and garden fences." data-es="Instalación y reparación de cercas de madera y jardín.">Instalación y reparación de cercas de madera y jardín.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
+        <h3 data-en="Pest Control" data-es="Control de plagas">Control de plagas</h3>
+        <p data-en="Safe treatment of weeds, insects and pests." data-es="Tratamiento seguro de maleza, insectos y plagas.">Tratamiento seguro de maleza, insectos y plagas.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h8v4a4 4 0 0 1-4 4H4"/><path d="M12 8h4a4 4 0 0 1 4 4v8"/><path d="M4 4v4M4 16v4"/></svg></div>
+        <h3 data-en="Garden Plumbing" data-es="Tuberías de jardín">Tuberías de jardín</h3>
+        <p data-en="Installation and repair of garden pipes and drainage." data-es="Instalación y reparación de tuberías y drenaje de jardín.">Instalación y reparación de tuberías y drenaje de jardín.</p>
       </article>
       <article class="svc svc-more">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div>
         <h3 data-en="And more" data-es="Y más">Y más</h3>
-        <p data-en="Fences, plumbing, pest control." data-es="Cercas, tuberías, control de plagas.">Cercas, tuberías, control de plagas.</p>
+        <p data-en="Stone edging, walkways, seasonal projects and more." data-es="Bordes de piedra, andadores, proyectos de temporada y más.">Bordes de piedra, andadores, proyectos de temporada y más.</p>
+        <a class="more-link" href="#contact" data-en="Ask us →" data-es="Pregúntanos →">Pregúntanos →</a>
       </article>
     </div>
   </div>
 </section>
 
-<section class="gallery" id="design">
+<section class="gallery" id="gallery">
   <div class="wrap">
     <div class="section-head">
+      <span class="eyebrow" data-en="Our work" data-es="Nuestro trabajo">Nuestro trabajo</span>
       <h2 data-en="Recent projects" data-es="Trabajos recientes">Trabajos recientes</h2>
-      <p data-en="Gardens we care for around Houston." data-es="Jardines que cuidamos en Houston.">Jardines que cuidamos en Houston.</p>
+      <p data-en="A glimpse of the gardens we care for around Houston." data-es="Un vistazo a los jardines que cuidamos en Houston.">Un vistazo a los jardines que cuidamos en Houston.</p>
     </div>
     <div class="carousel">
       <div class="car-viewport">
         <div class="car-track" id="carTrack">
-          <div class="car-slide"><img src="images/project-2.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-3.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-4.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-5.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-6.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-7.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-8.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-9.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-10.jpg" alt="Trabajo"></div>
-          <div class="car-slide"><img src="images/project-11.jpg" alt="Trabajo"></div>
+          <div class="car-slide"><img src="images/project-1.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-2.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-3.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-4.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-5.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-6.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-7.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-8.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-9.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-10.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-11.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-12.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
+          <div class="car-slide"><img src="images/project-13.jpg" alt="Trabajo de Maya Landscaping" loading="lazy"></div>
         </div>
       </div>
       <button class="car-btn car-prev" id="carPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <button class="car-btn car-next" id="carNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
       <div class="car-dots" id="carDots"></div>
     </div>
+    <p class="gal-note" data-en="More on our Instagram &amp; Facebook" data-es="Más en nuestro Instagram y Facebook">Más en nuestro Instagram y Facebook</p>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div>
+      <span class="eyebrow" data-en="Get in touch" data-es="Contáctanos">Contáctanos</span>
       <h2 data-en="Let's bring your yard to life" data-es="Hagamos que tu jardín reviva">Hagamos que tu jardín reviva</h2>
-      <p style="color:#cdd8cd;font-size:17px;margin-top:16px;max-width:30em" data-en="Reach out to schedule your visit." data-es="Contáctanos para agendar tu visita.">Contáctanos para agendar tu visita.</p>
-      <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
-        <div style="width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold-light),var(--gold));color:var(--green-900);font-family:var(--serif);font-size:18px;font-weight:bold">AM</div>
+      <p class="contact-lead" data-en="Reach out any way you like — we'll get back to you quickly to schedule your visit." data-es="Contáctanos por el medio que prefieras — te responderemos pronto para agendar tu visita.">Contáctanos por el medio que prefieras — te responderemos pronto para agendar tu visita.</p>
+      <div class="owner">
+        <div class="owner-av">AM</div>
         <div>
-          <b style="font-family:var(--serif);font-size:18px;color:#fff;display:block">Antonio Maya</b>
-          <span style="font-size:13px;color:var(--gold-light);font-weight:600" data-en="Owner" data-es="Dueño">Dueño</span>
+          <b>Antonio Maya</b>
+          <span data-en="Owner · Maya Landscaping" data-es="Dueño · Maya Landscaping">Dueño · Maya Landscaping</span>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px">
-        <a id="cmWa" href="#" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#f3efe2">
-          <svg viewBox="0 0 24 24" fill="#1faa54" style="width:20px;height:20px;flex-shrink:0"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
-          <span><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block">WhatsApp</span><span style="font-size:15px;font-weight:600;margin-top:2px;display:block">(979) 388-8683</span></span>
+      <div class="contact-methods">
+        <a class="cm" id="cmWa" href="#">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg></span>
+          <span><span class="lbl">WhatsApp</span><span class="val">(979) 388-8683</span></span>
         </a>
-        <a href="tel:+19793888683" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#f3efe2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--gold-light);flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <span><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block" data-en="Call" data-es="Llamar">Llamar</span><span style="font-size:15px;font-weight:600;margin-top:2px;display:block">(979) 388-8683</span></span>
+        <a class="cm" href="tel:+19793888683">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+          <span><span class="lbl" data-en="Call us" data-es="Llámanos">Llámanos</span><span class="val">(979) 388-8683</span></span>
         </a>
-        <a href="https://www.instagram.com/maya_landscaping_outdors_htx/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#f3efe2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--gold-light);flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
-          <span><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block">Instagram</span><span style="font-size:15px;font-weight:600;margin-top:2px;display:block">@maya_landscaping</span></span>
+        <a class="cm" href="/cdn-cgi/l/email-protection#375a564e561956594358595e5806775e545b5842531954585a">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="lbl">Email</span><span class="val"><span class="__cf_email__" data-cfemail="e489859d85ca858a908b8a8d8bd5a48d87888b9180ca878b89">[email&#160;protected]</span></span></span>
+        </a>
+        <a class="cm" href="https://www.facebook.com/antoniomayaLandScaping/" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.8.3-1.5 1.5-1.5H18V.2C17.5.1 16.4 0 15.3 0 12.8 0 11 1.5 11 4.2V6H8v3h3v9h3V9Z"/></svg></span>
+          <span><span class="lbl">Facebook</span><span class="val">Antonio Maya Landscaping</span></span>
+        </a>
+        <a class="cm" href="https://www.instagram.com/maya_landscaping_outdors_htx/" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+          <span><span class="lbl">Instagram</span><span class="val">@maya_landscaping_outdors_htx</span></span>
         </a>
       </div>
     </div>
 
     <form class="form-card" onsubmit="return sendBooking(event)">
-      <h3 data-en="Request a visit" data-es="Agenda tu visita">Agenda tu visita</h3>
-      <p style="font-size:14px;color:var(--muted);margin:8px 0 20px" data-en="We'll contact you via WhatsApp." data-es="Te contactaremos por WhatsApp.">Te contactaremos por WhatsApp.</p>
+      <h3 data-en="Request your visit" data-es="Agenda tu visita">Agenda tu visita</h3>
+      <p class="sub" data-en="Fill this out and we'll open WhatsApp with your request ready to send." data-es="Llena los datos y abriremos WhatsApp con tu solicitud lista para enviar.">Llena los datos y abriremos WhatsApp con tu solicitud lista para enviar.</p>
       <div class="field">
         <label data-en="Full name" data-es="Nombre completo">Nombre completo</label>
-        <input name="name" required placeholder="Tu nombre">
+        <input name="name" required data-en-ph="Your name" data-es-ph="Tu nombre" placeholder="Tu nombre">
       </div>
       <div class="field-row">
         <div class="field">
@@ -379,22 +425,30 @@
         </div>
       </div>
       <div class="field">
-        <label data-en="Service" data-es="Servicio">Servicio</label>
+        <label data-en="Service needed" data-es="Servicio que necesitas">Servicio que necesitas</label>
         <select name="service">
-          <option value="">Selecciona un servicio</option>
-          <option>Cuidado de césped</option>
-          <option>Flores y plantas</option>
-          <option>Mulch</option>
-          <option>Riego</option>
-          <option>Poda</option>
-          <option>Otro</option>
+          <option value="" data-en="Select a service…" data-es="Selecciona un servicio…">Selecciona un servicio…</option>
+          <option data-en="Lawn Care" data-es="Cuidado de césped">Cuidado de césped</option>
+          <option data-en="Flowers &amp; Plants" data-es="Flores y plantas">Flores y plantas</option>
+          <option data-en="Mulch" data-es="Mulch">Mulch</option>
+          <option data-en="Irrigation Repair" data-es="Reparación de riego">Reparación de riego</option>
+          <option data-en="Tree Trimming" data-es="Poda de árboles">Poda de árboles</option>
+          <option data-en="Driveway Wash" data-es="Lavado de cocheras">Lavado de cocheras</option>
+          <option data-en="Cleaning Service" data-es="Servicio de limpieza">Servicio de limpieza</option>
+          <option data-en="Bushes Trimming" data-es="Poda de arbustos">Poda de arbustos</option>
+          <option data-en="Fences" data-es="Cercas">Cercas</option>
+          <option data-en="Other / not sure" data-es="Otro / no estoy seguro">Otro / no estoy seguro</option>
         </select>
       </div>
       <div class="field">
-        <label data-en="Notes" data-es="Detalles">Detalles (opcional)</label>
-        <textarea name="notes" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+        <label data-en="Address or area" data-es="Dirección o zona">Dirección o zona</label>
+        <input name="address" data-en-ph="Neighborhood or address in Houston" data-es-ph="Colonia o dirección en Houston" placeholder="Colonia o dirección en Houston">
       </div>
-      <button type="submit" class="btn btn-wa" style="margin-top:12px">
+      <div class="field">
+        <label data-en="Details (optional)" data-es="Detalles (opcional)">Detalles (opcional)</label>
+        <textarea name="notes" data-en-ph="Tell us about what you need…" data-es-ph="Cuéntanos lo que necesitas…" placeholder="Cuéntanos lo que necesitas…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-wa">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
         <span data-en="Send via WhatsApp" data-es="Enviar por WhatsApp">Enviar por WhatsApp</span>
       </button>
@@ -406,17 +460,20 @@
   <div class="wrap foot">
     <div>© <span id="year"></span> Maya Landscaping · Houston, TX</div>
     <div class="foot-social">
-      <a href="https://www.instagram.com/maya_landscaping_outdors_htx/" target="_blank" rel="noopener" title="Instagram">
+      <a href="https://www.facebook.com/antoniomayaLandScaping/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.8.3-1.5 1.5-1.5H18V.2C17.5.1 16.4 0 15.3 0 12.8 0 11 1.5 11 4.2V6H8v3h3v9h3V9Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/maya_landscaping_outdors_htx/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
       </a>
-      <a id="footWa" href="#" title="WhatsApp">
+      <a id="footWa" href="#" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
       </a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const WA_NUMBER = '19793888683';
 
   function applyLang(lang){
@@ -428,23 +485,61 @@
         else el.textContent = val;
       }
     });
+    document.querySelectorAll('[data-en-ph]').forEach(el=>{
+      const val = el.getAttribute('data-'+lang+'-ph');
+      if(val!=null) el.placeholder = val;
+    });
     document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
   }
-  function setLang(lang){localStorage.setItem('maya-lang',lang);applyLang(lang)}
+  function setLang(lang){localStorage.setItem('maya-lang',lang);applyLang(lang);refreshWa()}
   (function(){let s=localStorage.getItem('maya-lang');if(!s)s=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';applyLang(s)})();
 
   const waBase='https://wa.me/'+WA_NUMBER;
-  const greet=()=>document.documentElement.lang==='es'?'Hola, me gustaría más información.':'Hi, I need more information.';
+  const greet=()=>document.documentElement.lang==='es'?'Hola Maya Landscaping, me gustaría más información sobre sus servicios.':'Hi Maya Landscaping, I would like more information about your services.';
   function refreshWa(){['heroWa','cmWa','footWa'].forEach(id=>{const e=document.getElementById(id);if(e)e.href=waBase+'?text='+encodeURIComponent(greet())})}
   refreshWa();
-  document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',refreshWa));
 
-  function sendBooking(e){e.preventDefault();const f=e.target,es=document.documentElement.lang==='es',g=f.elements,L=es?{title:'Nueva solicitud',name:'Nombre',phone:'Teléfono',service:'Servicio',date:'Fecha',notes:'Detalles'}:{title:'New request',name:'Name',phone:'Phone',service:'Service',date:'Date',notes:'Notes'};const lines=[L.title,'',`${L.name}: ${g.name.value}`,`${L.phone}: ${g.phone.value}`,`${L.service}: ${g.service.value||'No especificado'}`,`${L.date}: ${g.date.value||'No especificado'}`];if(g.notes.value)lines.push(`${L.notes}: ${g.notes.value}`);window.open(waBase+'?text='+encodeURIComponent(lines.join('\n')),'_blank');return false}
+  function sendBooking(e){
+    e.preventDefault();
+    const f=e.target,es=document.documentElement.lang==='es',g=f.elements;
+    const L=es?{title:'*Nueva solicitud de cita — Maya Landscaping*',name:'Nombre',phone:'Teléfono',service:'Servicio',date:'Fecha',addr:'Dirección/zona',notes:'Detalles',none:'(sin especificar)'}:{title:'*New appointment request — Maya Landscaping*',name:'Name',phone:'Phone',service:'Service',date:'Date',addr:'Address/area',notes:'Details',none:'(not specified)'};
+    const lines=[L.title,'',`${L.name}: ${g.name.value.trim()}`,`${L.phone}: ${g.phone.value.trim()}`,`${L.service}: ${g.service.value||L.none}`,`${L.date}: ${g.date.value||L.none}`,`${L.addr}: ${g.address.value.trim()||L.none}`];
+    if(g.notes.value.trim())lines.push(`${L.notes}: ${g.notes.value.trim()}`);
+    window.open(waBase+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
+    return false;
+  }
 
   document.getElementById('year').textContent=new Date().getFullYear();
   document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
 
-  (function(){const track=document.getElementById('carTrack'),slides=Array.from(track.children),prev=document.getElementById('carPrev'),next=document.getElementById('carNext'),dots=document.getElementById('carDots'),GAP=18;let perView=3,slideW=0,i=0,maxI=0;function build(){perView=window.innerWidth<=640?1:(window.innerWidth<=920?2:3);const vpW=track.parentElement.clientWidth;slideW=(vpW-GAP*(perView-1))/perView;slides.forEach(s=>s.style.width=slideW+'px');maxI=Math.max(0,slides.length-perView);if(i>maxI)i=maxI;dots.innerHTML='';for(let j=0;j<=maxI;j++){const b=document.createElement('button');b.className='car-dot'+(j===i?' active':'');b.onclick=()=>{i=j;upd()};dots.appendChild(b)}upd()}function upd(){track.style.transform='translateX(-'+slideW*i+GAP*i+'px)';Array.from(dots.children).forEach((d,j)=>d.classList.toggle('active',j===i))}prev.onclick=()=>{i=Math.max(0,i-1);upd()};next.onclick=()=>{i=Math.min(maxI,i+1);upd()};window.addEventListener('resize',()=>{clearTimeout(window.resT);window.resT=setTimeout(build,200)});build()})();
+  (function(){
+    const track=document.getElementById('carTrack'),slides=Array.from(track.children),prev=document.getElementById('carPrev'),next=document.getElementById('carNext'),dots=document.getElementById('carDots'),GAP=16;
+    let perView=3,slideW=0,i=0,maxI=0,timer=null;
+    function build(){
+      perView=window.innerWidth<=760?1:(window.innerWidth<=920?2:3);
+      const vpW=track.parentElement.clientWidth;
+      slideW=(vpW-GAP*(perView-1))/perView;
+      slides.forEach(s=>s.style.width=slideW+'px');
+      maxI=Math.max(0,slides.length-perView);
+      if(i>maxI)i=maxI;
+      dots.innerHTML='';
+      for(let j=0;j<=maxI;j++){const b=document.createElement('button');b.className='car-dot'+(j===i?' active':'');b.setAttribute('aria-label','Imagen '+(j+1));b.onclick=()=>{i=j;upd();restart()};dots.appendChild(b)}
+      upd();
+    }
+    function upd(){track.style.transform='translateX(-'+(slideW+GAP)*i+'px)';Array.from(dots.children).forEach((d,j)=>d.classList.toggle('active',j===i))}
+    function go(n){i=n<0?maxI:(n>maxI?0:n);upd()}
+    function restart(){if(timer)clearInterval(timer);timer=setInterval(()=>go(i+1),4500)}
+    prev.onclick=()=>{go(i-1);restart()};
+    next.onclick=()=>{go(i+1);restart()};
+    const car=document.querySelector('.carousel');
+    car.addEventListener('mouseenter',()=>{if(timer)clearInterval(timer)});
+    car.addEventListener('mouseleave',restart);
+    let sx=null;
+    track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+    track.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));restart()}sx=null});
+    let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,200)});
+    build();restart();
+  })();
 </script>
 </body>
 </html>
