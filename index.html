@@ -33,7 +33,7 @@
     --serif:'Marcellus',Georgia,serif;
     --sans:'Mulish',system-ui,sans-serif;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{box-sizing:border-box;margin:0;padding:0;overflow-x:hidden}
   html{scroll-behavior:smooth}
   body{
     font-family:var(--sans);
@@ -297,7 +297,9 @@
     .contact-grid{gap:30px}
   }
   @media(max-width:640px){
-    .wrap{padding:0 18px}
+    .wrap{padding:0 16px}
+    body{overflow-x:hidden}
+    html{overflow-x:hidden}
     .nav{height:70px}
     .nav-links{display:none}
     .nav-toggle{display:flex}
@@ -351,8 +353,11 @@
     .field-row{gap:12px}
     .form-card .btn{font-size:15px;padding:14px;min-height:48px}
     .car-slide{height:240px}
-    .car-btn{width:44px;height:44px;min-height:44px;min-width:44px}
-    .car-btn svg{width:20px;height:20px}
+    .car-btn{width:40px;height:40px;min-height:40px;min-width:40px}
+    .car-btn svg{width:18px;height:18px}
+    .car-dots{gap:6px}
+    .car-dot{width:6px;height:6px}
+    .car-dot.active{width:20px}
     .gal-note{font-size:12px;margin-top:16px}
     .foot{font-size:12px;gap:12px;padding:20px 0}
     .foot-social{gap:10px}
@@ -360,7 +365,7 @@
     .foot-social svg{width:18px;height:18px}
   }
   @media(max-width:480px){
-    .wrap{padding:0 16px}
+    .wrap{padding:0 14px}
     .brand-name{font-size:18px}
     .brand-sub{font-size:9px}
     .nav-right .btn{display:none}
